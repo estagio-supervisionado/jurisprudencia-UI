@@ -1,0 +1,29 @@
+<nb-card>
+  <nb-list
+    nbInfiniteList
+    listenWindowScroll
+    nbListPageTracker
+    [threshold]="500"
+    (bottomThreshold)="carregarProximo()"
+  >
+    <nb-list-item *ngFor="let item of dados">
+      <!-- <pre>{{ item | json }}</pre> -->
+      <article>
+        <h2>{{item.numeroUnico}}</h2>
+        <p [innerHTML]="item.documento | slice:0:400"></p>
+        <a href="#">Ver documento</a>
+      </article>
+    </nb-list-item>
+
+    <nb-list-item *ngFor="let _ of placeholders">
+      <app-placeholder></app-placeholder>
+    </nb-list-item>
+  </nb-list>
+</nb-card>
+<!--
+<pre>
+  <code>
+    {{dados | json}}
+  </code>
+</pre> -->
+<!-- http://localhost:4200/resultado?busca=justi%C3%A7a -->

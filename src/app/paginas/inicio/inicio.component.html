@@ -1,0 +1,17 @@
+<nb-card accent="info" class="card-busca">
+  <nb-card-header>
+    Buscar por
+  </nb-card-header>
+  <nb-card-body>
+    <form [formGroup]="formulario" (ngSubmit)="buscar()">
+      <input
+        type="text"
+        nbInput
+        placeholder="Ex: UFMT"
+        formControlName="busca"
+      />
+
+      <button nbButton hero status="info" type="submit">Buscar</button>
+    </form>
+  </nb-card-body>
+</nb-card>
